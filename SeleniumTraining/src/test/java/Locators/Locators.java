@@ -31,9 +31,9 @@ public class Locators
     @Test
     public void Locators() throws InterruptedException {
         //***************Localizador por "ID"
-        WebElement demoSite = driver.findElement(By.id("site-name"));
+       /* WebElement demoSite = driver.findElement(By.id("site-name"));
         demoSite.click();
-        Thread.sleep(3000);
+        Thread.sleep(3000);*/
 
         //****************Localizador por "Name"
         /*WebElement userName = driver.findElement(By.name("userName"));
@@ -71,10 +71,31 @@ public class Locators
         //El xphat absoluto es toda la ruta del elemento es decir la ibicacion del mismo y su sintaxis inicia con una diagonal
 
 
-        //***********
+        //***********absoluto*********
         //WebElement userName = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[4]/td[1]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[5]/td[1]/form[1]/table[1]/tbody[1]/tr[1]/td[2]/input[1]"));
        // userName.sendKeys(("Automation23"));
        // Thread.sleep(3000);
+
+        //************Xpath Relativo********************+
+        //El uso de xpath realtivo inicia con un doble // (diagonal)
+        //El uso de xpath relativo se realiza por medio de los tags y atributos, entiendase que:
+        //:tags son: spam,img, button, input,etc)
+
+        //1.- Un atributo
+        /*WebElement userName = driver.findElement(By.xpath("//input[@name='userName']"));
+        userName.sendKeys("REGISTRO");
+         Thread.sleep(3000);*/
+
+        //2.-dos atributos
+        /*WebElement demoSite = driver.findElement(By.xpath("//a[@title='Home' and @style='font-size:32px;']"));
+        demoSite.click();
+        Thread.sleep(3000);*/
+
+        //3.Uso de xpath usando contains con : "*" o "tag", cabe mencionar que se puede utilizar uno u otro
+        WebElement demoSite = driver.findElement(By.xpath("//*[contains(text(),'Demo S')]"));
+        demoSite.click();
+        Thread.sleep(3000);
+
     }
     @AfterTest
     public void TearDown()
