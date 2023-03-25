@@ -16,7 +16,10 @@ public class DropDown {
     public void Setup()
     {
 
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/Drivers/chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "src/main/resources/Drivers/chromedriver.exe");
+        //para firefox
+        //driver = new FirefoxDriver();
+        System.setProperty("webdriver.http.factory", "jdk-http-client");
 
         driver = new ChromeDriver();
 

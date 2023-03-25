@@ -16,7 +16,8 @@ public class CheckBox_RadioButton {
     public void Setup()
     {
         //se coloca en dirección del driver, segun corresponda (chrome, mozilla, edge...)
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/Drivers/chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "src/main/resources/Drivers/chromedriver.exe");
+        System.setProperty("webdriver.http.factory", "jdk-http-client");
 
         //se crea la instancia u objeto del Navegador
         driver = new ChromeDriver();
